@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <script src="https://kit.fontawesome.com/e9dfc8ac3b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/manuBar.css">
+
+  <link rel="icon" href="../favicon.ico"/>
+</head>
+
+<body>
+  <style> /* 모든 페이지에 필요한 css */
+    * { /* 화면초기화 */
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    }
+    body { /*배경*/
+      background: rgb(210, 237, 226);
+      background-size: cover;
+      min-height: 100vh;      
+      align-items: center;
+      justify-content: center;
+    }
+
+    
+    /* Contact 페이지 별도 css */
+    .container {
+      background: #fffef5;
+      position: absolute;
+      top: 50%;
+      left: 47%; /*화면의 왼쪽 기준으로 컨테이너 위치 이동*/
+      transform: translate(-40%, -50%); /*왼쪽을 차지하는 메뉴바 위치고려해서 컨테이너 위치이동*/
+      height: 470px;
+      width: 600px;
+      /* height: width: 60% 로 안한 이유 
+        높이와 너비가 줄어들때 실시간으로 줄어드는게 정신없어서 고정값 px로 지정 */ 
+      display: block;
+      border-radius: 5px;
+      box-shadow: 0 1px 15px 0 #799e98cc      
+    }
+    @media (min-width: 900px) { /*너비 900px이상일때*/
+      .container {
+        width: 700px;
+      }           
+    }
+    @media (max-width: 767px) { /*반응형, 메뉴바 반응 너비와 맞아야함*/
+      .container {
+        transform: translate(-50%, -45%); /*반응형 (가로축,세로축으로 컨테이너 위치 이동)*/
+        min-height: 85vh;
+        width: 85%;
+        left: 50%;
+      } 
+      .container .content ul {
+        display: block;
+      }
+      .container .content ul li {
+        margin-bottom: 10px;
+        width: 360px!important;
+        height: 150px!important;
+      }
+
+      .container .social_media {
+        padding-top: 0px;
+      }
+      .container .social_media ul {
+        flex-direction: column;
+      }
+      .container .social_media ul li {
+        width: 360px;
+        height: 150px;
+      }
+      .container .social_media ul .blog {
+        margin-top: 10px;
+      }
+
+      .address, .phone, .insta, .blog {
+        margin-left: 20px;
+      }
+    } 
+    
+    /* 주소와 전화 CSS */
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 70px;
+    }
+    .content ul { 
+      display: flex;
+    }
+    .container .content ul li {
+      list-style: none;
+      width: 150px;
+      height: 150px;
+      border: 2px solid lightgray;
+      border-radius: 3px;
+      text-align: center;
+    }
+    .container .content ul li .topic {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .fa-map-marker-alt, .fa-phone-alt {
+      font-size: 30px;
+      margin-top: 20px;
+      margin-bottom: 7px;
+      color: #65bbc0;
+    }
+    .text-one, .text-two{
+      font-size: 13px;
+      color: #636366;
+      display: flex;
+      flex-flow: column nowrap;
+    }
+
+    .address, .insta {
+      margin-right: 20px;
+    }
+
+
+    /*인스타,블로그 링크 CSS*/
+    .social_media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 20px;
+    } 
+    .social_media ul { 
+      display: flex;      
+    }
+    .social_media ul li {
+      list-style: none;
+      width: 150px;
+      height: 150px;
+      background: #65bbc0;
+      border-radius: 3px; /*둥근테두리*/      
+      text-align: center;
+    }
+    .social_media ul li:hover {
+      background: #00858a;
+    }
+    .social_media ul li a {
+      color: #fffef5;
+      display: block;      
+      text-decoration: none;
+    }
+
+    .insta { padding-top: 25px; }
+    .blog { padding-top: 30px; }
+    .link-topic { font-size: 20px; }
+    .insta { font-size: 40px; }
+    .blog { font-size: 35px; }
+
+  </style>
+
+  <div class="navigation"> <!-- 모든 페이지에 필요한 네비바 -->
+    <ul>
+      <li id="home">
+        <a href="../index.html">
+          <span class="icon"><i class="fa-solid fa-house"></i></span>
+          <span class="title">Home</span>
+        </a>
+      </li>
+      <li id="about"> 
+        <a href="./about.html">
+          <span class="icon"><i class="fa-solid fa-user"></i></span> 
+          <span class="title">About</span>  
+        </a> 
+      </li>
+      <li id="works"> 
+        <a href="./works.html" onclick="location.href='./html/works.html'">
+          <span class="icon"><i class="fa-solid fa-briefcase"></i></span> 
+          <span class="title">Works</span>  
+        </a> 
+      </li>
+      <li id="activity"> 
+        <a href="./activity.html">
+          <span class="icon"><i class="fa-solid fa-palette"></i></span> 
+          <span class="title">Activity</span>  
+        </a> 
+      </li>
+      <li id="contact"> <!--현재 페이지-->
+        <a href="#">
+          <span class="icon"><i class="fa-solid fa-envelope"></i></span> 
+          <span class="title">Contact</span>  
+        </a> 
+      </li>
+    </ul>
+  </div>
+
+  <div class="toggle" onclick="toggleMenu()"></div>
+  <script type="text/javascript">
+    function toggleMenu(){
+      let navigation = document.querySelector('.navigation');
+      let toggle = document.querySelector('.toggle');
+      navigation.classList.toggle('active');
+      toggle.classList.toggle('active');
+    }
+  </script>
+
+  <h2>Contact Page</h2>
+  
+    <div class="container">
+
+      <div class="content">
+        <ul>
+          <li class="address">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="topic"><strong>주소</strong></div>
+            <div class="text-one">인천광역시, </div>
+            <div class="text-two">랜드마크시티 오피스텔</div>
+          </li>
+          <li class="phone">
+            <i class="fas fa-phone-alt"></i>
+            <div class="topic"><strong>전화</strong></div>
+            <div class="text-one">010 1234 5678</div>
+            <div class="text-two">010 1111 2222</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="social_media">
+        <ul>
+          <li class="insta">
+            <a href="https://www.instagram.com/gyoya_artstudio/">
+            <i class="fa-brands fa-instagram"></i>
+            <div class="link-topic">Instagram</div>          
+          </a></li>
+          <li class="blog">
+            <a href="https://blog.naver.com/riova97">
+            <i class="fa-solid fa-message"></i>
+            <div class="link-topic">Blog</div>          
+          </a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  
+</body>
+</html>

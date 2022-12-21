@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <script src="https://kit.fontawesome.com/e9dfc8ac3b.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/manuBar.css">
+
+  <link rel="icon" href="../favicon.ico"/>
+</head>
+
+<body>
+  <style> /* 모든 페이지에 필요한 css */
+    * { /* 화면초기화, 글씨체 설정 */
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    /* list-style: none; */
+    }
+
+    body { /*배경*/
+      background: url(../images/일월오봉도.jpg) no-repeat right bottom fixed;
+      background-size: cover;
+      min-height: 100vh;
+    }
+
+    /* About 페이지 별도 css */
+    .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%); /*메뉴바 위치고려해서 이동*/
+    width: 500px;
+    display: flex;
+    border-radius: 5px;
+    box-shadow: 0 1px 15px 0 #455a64cc
+  }
+
+  @media (max-width: 767px) { /*메뉴바 반응 너비와 맞아야함*/
+    .container {
+      transform: translate(-50%, -50%); /*반응형*/
+    }  
+  }
+
+  .container .left {
+    width: 35%;
+    background: linear-gradient(to right, #edac35, #e3af4f);
+    padding: 30px 25px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-align: center;
+  }
+
+  .container .left img {
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .container .left h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .container .left p {
+    font-size: 14px;
+  }
+
+  .container .right {
+    width: 65%;
+    background-color: rgb(230, 198, 138);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 30px 30px;
+  }
+
+  .container .right .intro,
+  .container .right .info {
+    margin-bottom: 25px;
+  }
+
+  .container .right .intro h3,
+  .container .right .info h3 {
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #303849;
+    text-transform: uppercase;
+  }
+  .data {
+    font-size: 15px;
+  }
+  </style>
+
+  <div class="navigation"> <!-- 모든 페이지에 필요한 네비바 -->
+    <ul>
+      <li id="home">
+        <a href="../index.html">
+          <span class="icon"><i class="fa-solid fa-house"></i></span>
+          <span class="title">Home</span>
+        </a>
+      </li>
+      <li id="about"> <!--현재 페이지-->
+        <a href="#">
+          <span class="icon"><i class="fa-solid fa-user"></i></span> 
+          <span class="title">About</span>  
+        </a> 
+      </li>
+      <li id="works"> 
+        <a href="./works.html" onclick="location.href='./html/works.html'">
+          <span class="icon"><i class="fa-solid fa-briefcase"></i></span> 
+          <span class="title">Works</span>  
+        </a> 
+      </li>
+      <li id="activity"> 
+        <a href="./activity.html">
+          <span class="icon"><i class="fa-solid fa-palette"></i></span> 
+          <span class="title">Activity</span>  
+        </a> 
+      </li>
+      <li id="contact"> 
+        <a href="./contact.html">
+          <span class="icon"><i class="fa-solid fa-envelope"></i></span> 
+          <span class="title">Contact</span>  
+        </a> 
+      </li>
+    </ul>
+  </div>
+
+  <div class="toggle" onclick="toggleMenu()"></div>
+  <script type="text/javascript">
+    function toggleMenu(){
+      let navigation = document.querySelector('.navigation');
+      let toggle = document.querySelector('.toggle');
+      navigation.classList.toggle('active');
+      toggle.classList.toggle('active');
+    }
+  </script>
+  
+  <h2><span class="logo">About Page</span></h2>
+  <div class="logo">
+  </div>
+
+  <div class="container">
+
+    <div class="left">
+      <img src="../images/gyoya-profile.jpg" alt="user" width="100">
+      <h4>Gyoya</h4>
+      <p>Oriental Pianter</p>
+    </div>
+
+    <div class="right">
+      <div class="intro">
+        <h3>Introduction</h3> <!--소개말-->
+        <div class="intro_data">
+          <div class="data">
+            안녕하세요, 그림작가 gyoya입니다.
+          </div>
+        </div> 
+      </div>
+      <div class="info">
+        <h3>Information</h3> <!--정보-->
+        <div class="info_data">
+          <div class="data">
+            <strong>이력 :</strong> 20xx.xx.xx ~ 현재 <br>
+            <strong>email :</strong> gyoya@naver.com
+          </div>
+        </div> 
+      </div>
+    </div>
+
+  </div>
+
+
+</body>
+</html>
